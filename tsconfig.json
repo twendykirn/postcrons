@@ -1,0 +1,3 @@
+{
+  "extends": "@postcrons/config/tsconfig.base.json"
+}
