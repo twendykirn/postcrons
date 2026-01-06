@@ -41,7 +41,7 @@ export const Route = createRootRouteWithContext<RouterAppContext>()({
         content: "width=device-width, initial-scale=1",
       },
       {
-        title: "My App",
+        title: "PostCrons - Social Media Scheduler",
       },
     ],
     links: [
