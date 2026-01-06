@@ -1,26 +1,31 @@
 import { Link } from "@tanstack/react-router";
+import { Clock } from "lucide-react";
 
 export default function Header() {
-  const links = [
-    { to: "/", label: "Home" },
-    { to: "/dashboard", label: "Dashboard" },
-  ] as const;
-
   return (
-    <div>
-      <div className="flex flex-row items-center justify-between px-2 py-1">
-        <nav className="flex gap-4 text-lg">
-          {links.map(({ to, label }) => {
-            return (
-              <Link key={to} to={to}>
-                {label}
-              </Link>
-            );
-          })}
+    <div className="border-b">
+      <div className="flex flex-row items-center justify-between px-4 py-2">
+        <Link to="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+          <Clock className="size-5 text-primary" />
+          <span className="font-semibold text-sm">PostCrons</span>
+        </Link>
+        <nav className="flex items-center gap-1">
+          <Link
+            to="/"
+            className="px-3 py-1.5 text-xs hover:bg-muted transition-colors"
+            activeProps={{ className: "bg-muted" }}
+          >
+            Home
+          </Link>
+          <Link
+            to="/dashboard"
+            className="px-3 py-1.5 text-xs hover:bg-muted transition-colors"
+            activeProps={{ className: "bg-muted" }}
+          >
+            Dashboard
+          </Link>
         </nav>
-        <div className="flex items-center gap-2"></div>
       </div>
-      <hr />
     </div>
   );
 }
